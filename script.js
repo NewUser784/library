@@ -25,21 +25,36 @@ function displayBooks() {
         let cardIcon = document.createElement("div");
         cardIcon.classList.toggle("card-icon");
         let cardList = document.createElement("ul");
-        let title = document.createElement("li");
-        title.textContent = book.title;
-        let author = document.createElement("li");
-        author.textContent = book.author;
-        let pages = document.createElement("li");
-        pages.textContent = book.pages;
-        let read = document.createElement("li");
-        read.textContent = book.read;
+
+        let titleText = document.createElement("p");
+        titleText.textContent = book.title;
+        let authorText = document.createElement("p");
+        authorText.textContent = book.author;
+        let pagesText = document.createElement("p");
+        pagesText.textContent = book.pages;
+        let readText = document.createElement("p");
+        readText.textContent = book.read;
+
+        let titleHeader = document.createElement("li");
+        titleHeader.textContent = "Title: ";
+        let authorHeader = document.createElement("li");
+        authorHeader.textContent = "Author: ";
+        let pagesHeader = document.createElement("li");
+        pagesHeader.textContent = "Pages: ";
+        let readHeader = document.createElement("li");
+        readHeader.textContent = "Status: ";
+
         cardContainer.appendChild(cardDiv);
         cardDiv.appendChild(cardIcon);
         cardDiv.appendChild(cardList);
-        cardList.appendChild(title);
-        cardList.appendChild(author);
-        cardList.appendChild(pages);
-        cardList.appendChild(read);
+        cardList.appendChild(titleHeader);
+        titleHeader.appendChild(titleText);
+        cardList.appendChild(authorHeader);
+        authorHeader.appendChild(authorText);
+        cardList.appendChild(pagesHeader);
+        pagesHeader.appendChild(pagesText);
+        cardList.appendChild(readHeader);
+        readHeader.appendChild(readText);
     });
 }
 

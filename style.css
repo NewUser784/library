@@ -105,6 +105,14 @@ footer {
   font-weight: 600;
 }
 
+.new-book:hover {
+  background-color: #6b8584;
+}
+
+.new-book:active {
+  background-color: #4a5e5d;
+}
+
 .cards {
   display: grid;
   justify-content: center;

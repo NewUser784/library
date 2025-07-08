@@ -74,3 +74,13 @@ img {
   font-size: 40px;
   font-weight: 700;
 }
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #7F8CAA;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}

@@ -84,3 +84,49 @@ footer {
   font-size: 18px;
   font-weight: 600;
 }
+
+.main-content {
+  background-color: #EAEFEF;
+}
+
+.cards {
+  display: grid;
+  justify-content: center;
+  width: 100;
+  grid-template-rows: repeat(auto-fit, minmax(300px, 350px));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+  grid-auto-rows: minmax(300px, 350px);
+  column-gap: 50px;
+  row-gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: white;
+  padding: 5px 20px 20px 20px;
+}
+
+.card-icon {
+  width: 80%;
+  height: 50%;
+  background: no-repeat center url(images/book-open-page-variant.svg);
+  align-self: center;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none; 
+  padding: 0;
+}
+
+li {
+  display: flex;
+}
+
+li p {
+  margin-left: 5px;
+  color: #545757;
+}

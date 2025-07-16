@@ -116,7 +116,6 @@ footer {
 .cards {
   display: grid;
   justify-content: center;
-  width: 100;
   grid-template-rows: repeat(auto-fit, minmax(300px, 350px));
   grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
   grid-auto-rows: minmax(300px, 350px);

@@ -65,6 +65,10 @@ newBookBut.addEventListener("click", () => {
     dialog.showModal();
 });
 
+cancelBut.addEventListener("click", () => {
+    dialog.close();
+});
+
 // addBookToLibrary("Mistborn", "Sanderson", 500, "Not read yet");
 // addBookToLibrary("Blood of Elves", "Sapkwoski", 600, "Read");
 // addBookToLibrary("Fellowship of the Ring", "Tolkien", 1000, "Not read yet");

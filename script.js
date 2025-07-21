@@ -3,6 +3,7 @@ let i = 0;
 let cardContainer = document.querySelector(".cards");
 let newBookBut = document.querySelector(".new-book");
 let dialog = document.querySelector("dialog");
+let cancelBut = document.querySelector(".cancel-but");
 
 function Book(title, author, pages, read) {
     if (!new.target) {
@@ -62,10 +63,10 @@ function displayBooks() {
 
 newBookBut.addEventListener("click", () => {
     dialog.showModal();
-})
+});
 
-addBookToLibrary("Mistborn", "Sanderson", 500, "Not read yet");
-addBookToLibrary("Blood of Elves", "Sapkwoski", 600, "Read");
-addBookToLibrary("Fellowship of the Ring", "Tolkien", 1000, "Not read yet");
-addBookToLibrary("Goblet of Fire", "Rowling", 500, "Read");
-displayBooks();
+// addBookToLibrary("Mistborn", "Sanderson", 500, "Not read yet");
+// addBookToLibrary("Blood of Elves", "Sapkwoski", 600, "Read");
+// addBookToLibrary("Fellowship of the Ring", "Tolkien", 1000, "Not read yet");
+// addBookToLibrary("Goblet of Fire", "Rowling", 500, "Read");
+// displayBooks();

@@ -8,6 +8,7 @@ let addBookBut = document.querySelector(".add-book-but");
 let titleInput = document.querySelector("#book_title");
 let authorInput = document.querySelector("#book_author");
 let pagesInput = document.querySelector("#book_pages");
+let defaultRadio = document.querySelector("#not_read");
 
 function Book(title, author, pages, read, displayStatus) {
     if (!new.target) {
@@ -72,11 +73,19 @@ function displayBooks() {
 
 newBookBut.addEventListener("click", () => {
     dialog.showModal();
+    clearDialog();
 });
 
 cancelBut.addEventListener("click", () => {
     dialog.close();
 });
+
+function clearDialog() {
+    titleInput.value = "";
+    authorInput.value = "";
+    pagesInput.value = "";
+    defaultRadio.checked = true;
+}
 
 addBookBut.addEventListener("click", () => {
     let statusRadio = document.querySelector("input[name='status']:checked");

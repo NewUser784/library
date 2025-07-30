@@ -28,7 +28,7 @@ function addBookToLibrary(title, author, pages, read, displayStatus) {
 }
 
 function displayBooks() {
-    myLibrary.forEach((book) => {
+    myLibrary.forEach((book, index) => {
         if (book.displayStatus !== 1) {
             let cardDiv = document.createElement("div");
             cardDiv.classList.toggle("card");
@@ -54,6 +54,12 @@ function displayBooks() {
             let readHeader = document.createElement("li");
             readHeader.textContent = "Status: ";
 
+            let butContainer = document.createElement("div");
+            butContainer.classList.toggle("remove-but-container");
+            let removeBookBut = document.createElement("button");
+            removeBookBut.textContent = "Remove Book";
+            removeBookBut.classList.toggle("remove-but");
+
             cardContainer.appendChild(cardDiv);
             cardDiv.appendChild(cardIcon);
             cardDiv.appendChild(cardList);
@@ -65,6 +71,14 @@ function displayBooks() {
             pagesHeader.appendChild(pagesText);
             cardList.appendChild(readHeader);
             readHeader.appendChild(readText);
+            cardDiv.appendChild(butContainer);
+            butContainer.appendChild(removeBookBut);
+
+            removeBookBut.addEventListener("click", () => {
+                myLibrary.splice(index, 1);
+                cardContainer.removeChild(cardDiv);
+                i--;
+            });
 
             book.displayStatus = 1;
         }

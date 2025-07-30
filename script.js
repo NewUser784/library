@@ -57,7 +57,7 @@ function displayBooks() {
             let butContainer = document.createElement("div");
             butContainer.classList.toggle("remove-but-container");
             let removeBookBut = document.createElement("button");
-            removeBookBut.textContent = "Remove Book";
+            removeBookBut.textContent = "Remove";
             removeBookBut.classList.toggle("remove-but");
 
             cardContainer.appendChild(cardDiv);

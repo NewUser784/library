@@ -203,7 +203,8 @@ fieldset {
   column-gap: 10px;
 }
 
-.form-buttons button {
+.form-buttons button,
+.remove-but {
   width: 100px;
   height: 40px;
   font-weight: 600;
@@ -212,7 +213,8 @@ fieldset {
   border-radius: 10px;
 }
 
-.cancel-but {
+.cancel-but,
+.remove-but {
   background-color: rgb(171, 67, 67);
 }
 
@@ -224,7 +226,8 @@ fieldset {
   background-color: #799d9b;
 }
 
-.cancel-but:hover {
+.cancel-but:hover,
+.remove-but:hover {
   background-color: rgb(150, 53, 53);
 }
 
@@ -236,7 +239,8 @@ fieldset {
   background-color: #6b8584;
 }
 
-.cancel-but:active {
+.cancel-but:active,
+.remove-but:active {
   background-color: rgb(113, 38, 38);
 }
 
@@ -246,4 +250,13 @@ fieldset {
 
 .add-book-but:active {
   background-color: #4a5e5d;
+}
+
+ul {
+  margin-bottom: 10px;
+}
+
+.remove-but-container {
+  display: flex;
+  justify-content: center;
 }

@@ -204,7 +204,9 @@ fieldset {
 }
 
 .form-buttons button,
-.remove-but {
+.remove-but,
+.read-but,
+.not-read-but {
   width: 100px;
   height: 40px;
   font-weight: 600;
@@ -259,4 +261,29 @@ ul {
 .remove-but-container {
   display: flex;
   justify-content: center;
+  gap: 20px;
+}
+
+.read-but {
+  background-color: #799d9b;
+}
+
+.read-but:hover {
+  background-color: #6b8584;
+}
+
+.read-but:active {
+  background-color: #4a5e5d;
+}
+
+.not-read-but {
+  background-color: #333446;
+}
+
+.not-read-but:hover {
+  background-color: #2d2e3f;
+}
+
+.not-read-but:active {
+  background-color: #21222e;
 }

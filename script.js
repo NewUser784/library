@@ -140,8 +140,8 @@ Book.prototype.toggleReadStatus = function () {
     }
 };
 
-// addBookToLibrary("Mistborn", "Sanderson", 500, "not read yet", 0);
-// addBookToLibrary("Blood of Elves", "Sapkwoski", 600, "read", 0);
-// addBookToLibrary("Fellowship of the Ring", "Tolkien", 1000, "not read yet", 0);
-// addBookToLibrary("Goblet of Fire", "Rowling", 500, "read", 0);
-// displayBooks();
+addBookToLibrary("Mistborn", "Brandon Sanderson", 672, "not read yet", 0);
+addBookToLibrary("The Tower of Swallows", "Andrzej Sapkwoski", 464, "read", 0);
+addBookToLibrary("The Fellowship of the Ring", "JRR Tolkien", 531, "not read yet", 0);
+addBookToLibrary("Shoedog", "Phil Knight", 400, "read", 0);
+displayBooks();

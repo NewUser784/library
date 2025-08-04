@@ -59,6 +59,15 @@ function displayBooks() {
             let removeBookBut = document.createElement("button");
             removeBookBut.textContent = "Remove";
             removeBookBut.classList.toggle("remove-but");
+            let toggleReadBut = document.createElement("button");
+
+            if (book.read === "read") {
+                toggleReadBut.textContent = "not read";
+                toggleReadBut.classList.toggle("not-read-but");
+            } else {
+                toggleReadBut.textContent = "read";
+                toggleReadBut.classList.toggle("read-but");
+            }
 
             cardContainer.appendChild(cardDiv);
             cardDiv.appendChild(cardIcon);
@@ -73,11 +82,27 @@ function displayBooks() {
             readHeader.appendChild(readText);
             cardDiv.appendChild(butContainer);
             butContainer.appendChild(removeBookBut);
+            butContainer.appendChild(toggleReadBut);
 
             removeBookBut.addEventListener("click", () => {
                 myLibrary.splice(index, 1);
                 cardContainer.removeChild(cardDiv);
                 i--;
+            });
+
+            toggleReadBut.addEventListener("click", () => {
+                book.toggleReadStatus();
+                readText.textContent = book.read;
+
+                if (book.read === "read") {
+                    toggleReadBut.textContent = "not read";
+                    toggleReadBut.classList.toggle("not-read-but");
+                    toggleReadBut.classList.toggle("read-but");
+                } else {
+                    toggleReadBut.textContent = "read";
+                    toggleReadBut.classList.toggle("read-but");
+                    toggleReadBut.classList.toggle("not-read-but");
+                }
             });
 
             book.displayStatus = 1;
@@ -107,8 +132,16 @@ addBookBut.addEventListener("click", () => {
     displayBooks();
 });
 
-addBookToLibrary("Mistborn", "Sanderson", 500, "Not read yet", 0);
-addBookToLibrary("Blood of Elves", "Sapkwoski", 600, "Read", 0);
-addBookToLibrary("Fellowship of the Ring", "Tolkien", 1000, "Not read yet", 0);
-addBookToLibrary("Goblet of Fire", "Rowling", 500, "Read", 0);
-displayBooks();
+Book.prototype.toggleReadStatus = function () {
+    if (this.read === "read") {
+        this.read = "not read yet";
+    } else {
+        this.read = "read";
+    }
+};
+
+// addBookToLibrary("Mistborn", "Sanderson", 500, "not read yet", 0);
+// addBookToLibrary("Blood of Elves", "Sapkwoski", 600, "read", 0);
+// addBookToLibrary("Fellowship of the Ring", "Tolkien", 1000, "not read yet", 0);
+// addBookToLibrary("Goblet of Fire", "Rowling", 500, "read", 0);
+// displayBooks();

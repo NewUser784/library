@@ -10,17 +10,58 @@ let authorInput = document.querySelector("#book_author");
 let pagesInput = document.querySelector("#book_pages");
 let defaultRadio = document.querySelector("#not_read");
 
-function Book(title, author, pages, read, displayStatus) {
-    if (!new.target) {
-        throw Error("You must use the 'new' operator to call the constructor");
+class Book {
+    #id;
+    #title;
+    #author;
+    #pages;
+    #read;
+    #displayStatus;
+
+    constructor(title, author, pages, read, displayStatus) {
+        if (!new.target) {
+            throw Error("You must use the 'new' operator to call the constructor");
+        }
+
+        this.#id = crypto.randomUUID();
+        this.#title = title;
+        this.#author = author;
+        this.#pages = pages;
+        this.#read = read;
+        this.#displayStatus = displayStatus;
     }
 
-    this.id = crypto.randomUUID();
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.displayStatus = displayStatus;
+    get title() {
+        return this.#title;
+    }
+
+    get author() {
+        return this.#author;
+    }
+
+    get pages() {
+        return this.#pages;
+    }
+
+    get read() {
+        return this.#read;
+    }
+
+    get displayStatus() {
+        return this.#displayStatus;
+    }
+
+    set read(value) {
+        this.#read = value; 
+    }
+
+    toggleReadStatus() {
+        if (this.#read === "read") {
+            this.#read = "not read yet";
+        } else {
+            this.#read = "read";
+        }
+    }
 }
 
 function addBookToLibrary(title, author, pages, read, displayStatus) {
@@ -131,14 +172,6 @@ addBookBut.addEventListener("click", () => {
     addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value, statusRadio.value, 0);
     displayBooks();
 });
-
-Book.prototype.toggleReadStatus = function () {
-    if (this.read === "read") {
-        this.read = "not read yet";
-    } else {
-        this.read = "read";
-    }
-};
 
 addBookToLibrary("Mistborn", "Brandon Sanderson", 672, "not read yet", 0);
 addBookToLibrary("The Tower of Swallows", "Andrzej Sapkwoski", 464, "read", 0);
